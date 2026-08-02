@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://b0kd7n253pumj"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mq8aq"]
+size = Vector3(0.115, 0.115, 0.115)
+
+[sub_resource type="BoxMesh" id="BoxMesh_51fql"]
+size = Vector3(0.115, 0.115, 0.115)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mq8aq"]
+radius = 0.03
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_mq8aq"]
+radius = 0.03
+
+[node name="CartPole" type="Node3D" unique_id=1941876373]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=27876677]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="SliderJoint3D" type="SliderJoint3D" parent="." unique_id=1056223422]
+node_a = NodePath("../Cart")
+
+[node name="PinJoint3D" type="PinJoint3D" parent="." unique_id=1001604249]
+node_a = NodePath("../Cart")
+node_b = NodePath("../Pole")
+
+[node name="Cart" type="RigidBody3D" parent="." unique_id=1008853378]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cart" unique_id=370344480]
+shape = SubResource("BoxShape3D_mq8aq")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Cart" unique_id=322308347]
+mesh = SubResource("BoxMesh_51fql")
+
+[node name="Pole" type="RigidBody3D" parent="." unique_id=1102643688]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.034262, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pole" unique_id=1997617885]
+shape = SubResource("CapsuleShape3D_mq8aq")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Pole" unique_id=2107102377]
+mesh = SubResource("CapsuleMesh_mq8aq")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1407511690]
+transform = Transform3D(-0.99997604, 0.0012501706, -0.0068131047, 0, 0.9835784, 0.18048172, 0.006926855, 0.18047738, -0.9835548, 0.005095374, 0.23803169, -3.3977647)

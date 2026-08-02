@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="RL-Projects"
-run/main_scene="uid://djlr2de8j576b"
+run/main_scene="uid://b0kd7n253pumj"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
