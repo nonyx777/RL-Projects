@@ -1,0 +1,117 @@
+[gd_scene format=3 uid="uid://djlr2de8j576b"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mq8aq"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_mq8aq"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_51fql"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_51fql"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_51fql"]
+size = Vector3(0.5, 5, 2.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_mq8aq"]
+size = Vector3(0.5, 5, 2.5)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kfvix"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_kfvix"]
+
+[node name="Joints" type="Node3D" unique_id=1076264961]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1265379687]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=688958935]
+transform = Transform3D(-0.021814208, -0.087134875, 0.9959577, 0, 0.9961947, 0.08715562, -0.99976206, 0.0019012308, -0.0217312, 13.196529, 2.3775103, -2.9659393)
+
+[node name="ConeTwistJoint" type="Node3D" parent="." unique_id=805964018]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9952531, 1.0454813, -3.0852861)
+
+[node name="ConeTwistJoint3D" type="ConeTwistJoint3D" parent="ConeTwistJoint" unique_id=900050341]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5561212, 0.0642941)
+node_a = NodePath("../Limb")
+
+[node name="Limb" type="RigidBody3D" parent="ConeTwistJoint" unique_id=641179625]
+transform = Transform3D(1, 0, 0, 0, -0.7298932, -0.6835616, 0, 0.6835616, -0.7298932, 0, 0.07453573, -0.51545)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ConeTwistJoint/Limb" unique_id=171074902]
+shape = SubResource("CapsuleShape3D_mq8aq")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ConeTwistJoint/Limb" unique_id=638730611]
+mesh = SubResource("CapsuleMesh_mq8aq")
+
+[node name="ConeTwistJoint2" type="Node3D" parent="." unique_id=179472406]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.98984766, 0.98431563, -0.2764572)
+
+[node name="ConeTwistJoint3D" type="ConeTwistJoint3D" parent="ConeTwistJoint2" unique_id=616294279]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.062182307, -0.008281708)
+node_a = NodePath("../Limb")
+
+[node name="Limb" type="RigidBody3D" parent="ConeTwistJoint2" unique_id=628216586]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1.0000002, 0, -1.0000002, -4.37114e-08, 0, 0.07453573, 1.0067055)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ConeTwistJoint2/Limb" unique_id=1955970097]
+shape = SubResource("CapsuleShape3D_mq8aq")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ConeTwistJoint2/Limb" unique_id=2026844154]
+mesh = SubResource("CapsuleMesh_mq8aq")
+
+[node name="Generic6DOFJoint" type="Node3D" parent="." unique_id=665769893]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0108422, 0, 2.4571655)
+
+[node name="Generic6DOFJoint3D" type="Generic6DOFJoint3D" parent="Generic6DOFJoint" unique_id=1194132838]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.00294, 0.95212984, -0.88135755)
+node_a = NodePath("../Limb")
+angular_limit_x/enabled = false
+angular_limit_y/enabled = false
+angular_limit_z/enabled = false
+angular_motor_x/enabled = true
+angular_motor_x/target_velocity = 1.2217305
+angular_motor_y/enabled = true
+angular_motor_y/target_velocity = 1.5707964
+angular_motor_z/enabled = true
+angular_motor_z/target_velocity = 1.3962634
+
+[node name="Limb" type="RigidBody3D" parent="Generic6DOFJoint" unique_id=1650039323]
+transform = Transform3D(1.0000001, 0, 0, 0, 1.0000002, 0, 0, 0, 1.0000006, -1.0022063, 0, -0.8848294)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Generic6DOFJoint/Limb" unique_id=855921009]
+shape = SubResource("CapsuleShape3D_51fql")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Generic6DOFJoint/Limb" unique_id=1754645752]
+mesh = SubResource("CapsuleMesh_51fql")
+
+[node name="HingeJoint" type="Node3D" parent="." unique_id=2123171250]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.8969126)
+
+[node name="HingeJoint3D" type="HingeJoint3D" parent="HingeJoint" unique_id=322114933]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0.11693716, -1.2889564)
+node_a = NodePath("../Door")
+motor/enable = true
+
+[node name="Door" type="RigidBody3D" parent="HingeJoint" unique_id=662212459]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.5090904)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HingeJoint/Door" unique_id=1888590468]
+shape = SubResource("BoxShape3D_51fql")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="HingeJoint/Door" unique_id=1449248334]
+mesh = SubResource("BoxMesh_mq8aq")
+
+[node name="SliderJoint" type="Node3D" parent="." unique_id=1663036122]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9851041, 0, -1.4442998)
+
+[node name="SliderJoint3D" type="SliderJoint3D" parent="SliderJoint" unique_id=621384382]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+node_a = NodePath("../RigidBody3D")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="SliderJoint" unique_id=643698762]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SliderJoint/RigidBody3D" unique_id=772531658]
+shape = SubResource("CapsuleShape3D_kfvix")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SliderJoint/RigidBody3D" unique_id=1277825558]
+mesh = SubResource("CapsuleMesh_kfvix")
