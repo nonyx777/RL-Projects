@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://n5ucthat4qis"]
+
+[ext_resource type="PackedScene" uid="uid://b0kd7n253pumj" path="res://Scene/cart_pole.tscn" id="1_cx348"]
+[ext_resource type="Script" uid="uid://c4c20urrvqtca" path="res://addons/godot_rl_agents/sync.gd" id="2_7yexu"]
+
+[node name="Node3D" type="Node3D" unique_id=329222601]
+
+[node name="CartPole" parent="." unique_id=1941876373 instance=ExtResource("1_cx348")]
+
+[node name="CartPole6" parent="." unique_id=916498474 instance=ExtResource("1_cx348")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
+
+[node name="CartPole7" parent="." unique_id=1114481560 instance=ExtResource("1_cx348")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
+
+[node name="CartPole11" parent="." unique_id=710766961 instance=ExtResource("1_cx348")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
+
+[node name="CartPole3" parent="." unique_id=729757386 instance=ExtResource("1_cx348")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
+
+[node name="CartPole4" parent="." unique_id=839983986 instance=ExtResource("1_cx348")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -2)
+
+[node name="CartPole5" parent="." unique_id=727789392 instance=ExtResource("1_cx348")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -4)
+
+[node name="CartPole10" parent="." unique_id=1769344750 instance=ExtResource("1_cx348")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -6)
+
+[node name="CartPole2" parent="." unique_id=883748187 instance=ExtResource("1_cx348")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+
+[node name="CartPole8" parent="." unique_id=1179649953 instance=ExtResource("1_cx348")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -2)
+
+[node name="CartPole9" parent="." unique_id=1915897362 instance=ExtResource("1_cx348")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -4)
+
+[node name="CartPole12" parent="." unique_id=570346554 instance=ExtResource("1_cx348")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -6)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=837986976]
+transform = Transform3D(0.99991435, -0.0032671827, 0.012674933, 0, 0.96834695, 0.24960813, -0.013089248, -0.24958675, 0.968264, 0.15635362, 2.3856611, 5.3544908)
+
+[node name="Sync" type="Node" parent="." unique_id=2056270475]
+script = ExtResource("2_7yexu")
+speed_up = 8.0
+metadata/_custom_type_script = "uid://c4c20urrvqtca"

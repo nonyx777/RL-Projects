@@ -1,15 +1,24 @@
 [gd_scene format=3 uid="uid://b0kd7n253pumj"]
 
 [ext_resource type="Script" uid="uid://dpqnwn4k8b6tb" path="res://Script/cart_pole.gd" id="1_cv1pv"]
+[ext_resource type="Script" uid="uid://cecbgkaw2dj0u" path="res://Scene/ai_controller_3d.gd" id="2_87veb"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mq8aq"]
-size = Vector3(0.115, 0.115, 0.115)
+size = Vector3(0.5, 0.5, 0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_87veb"]
+emission_enabled = true
+emission = Color(0.9745907, 0.5711508, 7.70092e-07, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_51fql"]
-size = Vector3(0.115, 0.115, 0.115)
+size = Vector3(0.5, 0.5, 0.5)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mq8aq"]
 radius = 0.03
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0cjno"]
+emission_enabled = true
+emission = Color(0.6872149, 0.68721503, 0.6872149, 1)
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_mq8aq"]
 radius = 0.03
@@ -17,40 +26,41 @@ radius = 0.03
 [node name="CartPole" type="Node3D" unique_id=1941876373]
 script = ExtResource("1_cv1pv")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=27876677]
-transform = Transform3D(-0.8660254, -0.43301278, 0.24999999, 0.4836554, -0.85228026, 0.19923833, 0.12679733, 0.29345933, 0.9475253, 0, 0, 0)
-shadow_enabled = true
-
 [node name="SliderJoint3D" type="SliderJoint3D" parent="." unique_id=1056223422]
-node_a = NodePath("../Cart")
+node_a = NodePath("../Cart-Pole/Cart")
 linear_limit/upper_distance = 2.0
 linear_limit/lower_distance = -2.0
 
 [node name="HingeJoint3D" type="HingeJoint3D" parent="." unique_id=254935973]
-node_a = NodePath("../Cart")
-node_b = NodePath("../Pole")
+node_a = NodePath("../Cart-Pole/Cart")
+node_b = NodePath("../Cart-Pole/Pole")
 
-[node name="Cart" type="RigidBody3D" parent="." unique_id=1008853378]
+[node name="Cart-Pole" type="Node3D" parent="." unique_id=548458065]
+
+[node name="Cart" type="RigidBody3D" parent="Cart-Pole" unique_id=1008853378]
 mass = 2.0
 can_sleep = false
 linear_velocity = Vector3(12, 0, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Cart" unique_id=370344480]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cart-Pole/Cart" unique_id=370344480]
 shape = SubResource("BoxShape3D_mq8aq")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Cart" unique_id=322308347]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Cart-Pole/Cart" unique_id=322308347]
+material_override = SubResource("StandardMaterial3D_87veb")
 mesh = SubResource("BoxMesh_51fql")
 
-[node name="Pole" type="RigidBody3D" parent="." unique_id=1102643688]
+[node name="Pole" type="RigidBody3D" parent="Cart-Pole" unique_id=1102643688]
 transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0.9814348, 0)
 mass = 0.1
 can_sleep = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Pole" unique_id=1997617885]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cart-Pole/Pole" unique_id=1997617885]
 shape = SubResource("CapsuleShape3D_mq8aq")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Pole" unique_id=2107102377]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Cart-Pole/Pole" unique_id=2107102377]
+material_override = SubResource("StandardMaterial3D_0cjno")
 mesh = SubResource("CapsuleMesh_mq8aq")
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=1407511690]
-transform = Transform3D(0.9999905, -0.000888552, 0.0042718784, 0, 0.9790455, 0.20364176, -0.0043633096, -0.20363982, 0.97903615, 0.021490091, 0.5218816, 3.9928956)
+[node name="AIController3D" type="Node3D" parent="." unique_id=1065969588]
+script = ExtResource("2_87veb")
+metadata/_custom_type_script = "uid://cmvl0yom2wj0c"
