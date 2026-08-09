@@ -45,5 +45,7 @@ transform = Transform3D(0.99991435, -0.0032671827, 0.012674933, 0, 0.96834695, 0
 
 [node name="Sync" type="Node" parent="." unique_id=2056270475]
 script = ExtResource("2_7yexu")
+control_mode = 2
 speed_up = 8.0
+onnx_model_path = "cp1.onnx"
 metadata/_custom_type_script = "uid://c4c20urrvqtca"
