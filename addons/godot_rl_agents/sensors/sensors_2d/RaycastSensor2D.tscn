@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://drvfihk5esgmv"]
+
+[ext_resource type="Script" uid="uid://v53ppbijpqec" path="res://addons/godot_rl_agents/sensors/sensors_2d/RaycastSensor2D.gd" id="1"]
+
+[node name="RaycastSensor2D" type="Node2D" unique_id=902910974]
+script = ExtResource("1")
+n_rays = 17.0
+
+[node name="node_0_0" type="RayCast2D" parent="." unique_id=1191974083]
+enabled = false
+target_position = Vector2(-196.59462, -36.749905)
+
+[node name="node_1_0" type="RayCast2D" parent="." unique_id=2028239008]
+enabled = false
+target_position = Vector2(-170.04343, -105.28643)
+
+[node name="node_2_0" type="RayCast2D" parent="." unique_id=585270002]
+enabled = false
+target_position = Vector2(-120.526924, -159.60344)
+
+[node name="node_3_0" type="RayCast2D" parent="." unique_id=900839836]
+enabled = false
+target_position = Vector2(-54.732597, -192.36513)
+
+[node name="node_4_0" type="RayCast2D" parent="." unique_id=1564689456]
+enabled = false
+target_position = Vector2(18.453672, -199.14684)
+
+[node name="node_5_0" type="RayCast2D" parent="." unique_id=756447450]
+enabled = false
+target_position = Vector2(89.147675, -179.03265)
+
+[node name="node_6_0" type="RayCast2D" parent="." unique_id=1477691370]
+enabled = false
+target_position = Vector2(147.80179, -134.73914)
+
+[node name="node_7_0" type="RayCast2D" parent="." unique_id=1066219538]
+enabled = false
+target_position = Vector2(186.49445, -72.24834)
+
+[node name="node_8_0" type="RayCast2D" parent="." unique_id=1465829882]
+enabled = false
+target_position = Vector2(200, 0)
+
+[node name="node_9_0" type="RayCast2D" parent="." unique_id=1988885857]
+enabled = false
+target_position = Vector2(186.49445, 72.24834)
+
+[node name="node_10_0" type="RayCast2D" parent="." unique_id=329670125]
+enabled = false
+target_position = Vector2(147.80179, 134.73914)
+
+[node name="node_11_0" type="RayCast2D" parent="." unique_id=830477143]
+enabled = false
+target_position = Vector2(89.147675, 179.03265)
+
+[node name="node_12_0" type="RayCast2D" parent="." unique_id=1193631514]
+enabled = false
+target_position = Vector2(18.453672, 199.14684)
+
+[node name="node_13_0" type="RayCast2D" parent="." unique_id=1247224725]
+enabled = false
+target_position = Vector2(-54.732597, 192.36513)
+
+[node name="node_14_0" type="RayCast2D" parent="." unique_id=1679800984]
+enabled = false
+target_position = Vector2(-120.526924, 159.60344)
+
+[node name="node_15_0" type="RayCast2D" parent="." unique_id=1884301987]
+enabled = false
+target_position = Vector2(-170.04343, 105.28643)
+
+[node name="node_16_0" type="RayCast2D" parent="." unique_id=1663903004]
+enabled = false
+target_position = Vector2(-196.59462, 36.749905)
