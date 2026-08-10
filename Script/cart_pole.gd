@@ -7,7 +7,7 @@ extends Node3D
 
 const MAX_POLE_ANGLE: float = deg_to_rad(30)
 const MAX_CART_DIST: float = 2.5
-const MAX_NUM_STEPS: int = 200
+const MAX_NUM_STEPS: int = 500
 const CART_FORCE: float = 5.0
 
 var pole_default_transform: Transform3D
@@ -31,14 +31,15 @@ func termination_conditions() -> bool:
 	var time_limit: bool = ai_controller.n_steps >= MAX_NUM_STEPS
 	
 	
-	if pole_failed or cart_failed or time_limit:
+	if pole_failed or cart_failed:
 		ai_controller.reward = -1.0
-		ai_controller.reset()
-		reset_values()
-		return true
 	else:
 		ai_controller.reward = 1.0
 	
+	if pole_failed or cart_failed or time_limit:
+		ai_controller.reset()
+		reset_values()
+		return true
 	return false
 
 func _ready() -> void:
@@ -46,8 +47,6 @@ func _ready() -> void:
 	reset_values()
 
 func _physics_process(_delta: float) -> void:
-	if termination_conditions():
-		return
 	var force: Vector3 = Vector3.ZERO
 	match ai_controller.slide:
 		0:
@@ -56,3 +55,6 @@ func _physics_process(_delta: float) -> void:
 			force = Vector3.RIGHT * CART_FORCE
 	
 	cart.apply_central_force(force)
+	
+	if termination_conditions():
+		return

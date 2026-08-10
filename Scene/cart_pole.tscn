@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dpqnwn4k8b6tb" path="res://Script/cart_pole.gd" id="1_cv1pv"]
 [ext_resource type="Script" uid="uid://cecbgkaw2dj0u" path="res://Scene/ai_controller_3d.gd" id="2_87veb"]
+[ext_resource type="Script" uid="uid://c4c20urrvqtca" path="res://addons/godot_rl_agents/sync.gd" id="3_0cjno"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mq8aq"]
 size = Vector3(0.5, 0.5, 0.5)
@@ -64,3 +65,12 @@ mesh = SubResource("CapsuleMesh_mq8aq")
 [node name="AIController3D" type="Node3D" parent="." unique_id=1065969588]
 script = ExtResource("2_87veb")
 metadata/_custom_type_script = "uid://cmvl0yom2wj0c"
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1528726634]
+transform = Transform3D(0.99991435, 0.0017083709, -0.012976391, 0, 0.9914449, 0.13052595, 0.013088363, -0.13051476, 0.99136, -0.058840163, 0.8740257, 2.7615926)
+
+[node name="Sync" type="Node" parent="." unique_id=424463052]
+script = ExtResource("3_0cjno")
+control_mode = 2
+onnx_model_path = "cp1.onnx"
+metadata/_custom_type_script = "uid://c4c20urrvqtca"
