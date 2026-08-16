@@ -17,28 +17,28 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
 
 [node name="CartPole3" parent="." unique_id=729757386 instance=ExtResource("1_cx348")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0)
 
 [node name="CartPole4" parent="." unique_id=839983986 instance=ExtResource("1_cx348")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -2)
 
 [node name="CartPole5" parent="." unique_id=727789392 instance=ExtResource("1_cx348")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -4)
 
 [node name="CartPole10" parent="." unique_id=1769344750 instance=ExtResource("1_cx348")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -6)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -6)
 
 [node name="CartPole2" parent="." unique_id=883748187 instance=ExtResource("1_cx348")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0)
 
 [node name="CartPole8" parent="." unique_id=1179649953 instance=ExtResource("1_cx348")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -2)
 
 [node name="CartPole9" parent="." unique_id=1915897362 instance=ExtResource("1_cx348")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -4)
 
 [node name="CartPole12" parent="." unique_id=570346554 instance=ExtResource("1_cx348")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -6)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -6)
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=837986976]
 transform = Transform3D(0.99991435, -0.0032671827, 0.012674933, 0, 0.96834695, 0.24960813, -0.013089248, -0.24958675, 0.968264, 0.15635362, 2.3856611, 5.3544908)

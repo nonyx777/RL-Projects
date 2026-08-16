@@ -24,6 +24,14 @@ emission = Color(0.6872149, 0.68721503, 0.6872149, 1)
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_mq8aq"]
 radius = 0.03
 
+[sub_resource type="CylinderMesh" id="CylinderMesh_0cjno"]
+top_radius = 0.01
+bottom_radius = 0.01
+height = 3.985
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_0cjno"]
+size = Vector2(0.5, 0.5)
+
 [node name="CartPole" type="Node3D" unique_id=1941876373]
 script = ExtResource("1_cv1pv")
 
@@ -62,15 +70,29 @@ shape = SubResource("CapsuleShape3D_mq8aq")
 material_override = SubResource("StandardMaterial3D_0cjno")
 mesh = SubResource("CapsuleMesh_mq8aq")
 
+[node name="Slider" type="Node3D" parent="." unique_id=1673646815]
+
+[node name="SliderRod" type="MeshInstance3D" parent="Slider" unique_id=1462144701]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("CylinderMesh_0cjno")
+
+[node name="SliderBoundary" type="MeshInstance3D" parent="Slider" unique_id=410586626]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 2, 0, 0)
+mesh = SubResource("PlaneMesh_0cjno")
+
+[node name="SliderBoundary2" type="MeshInstance3D" parent="Slider" unique_id=592357619]
+transform = Transform3D(4.371139e-08, 1, -8.742278e-08, 1, -4.371139e-08, 0, -3.821371e-15, -8.742278e-08, -1, -2, 0, 0)
+mesh = SubResource("PlaneMesh_0cjno")
+
 [node name="AIController3D" type="Node3D" parent="." unique_id=1065969588]
 script = ExtResource("2_87veb")
 metadata/_custom_type_script = "uid://cmvl0yom2wj0c"
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=1528726634]
-transform = Transform3D(0.99991435, 0.0017083709, -0.012976391, 0, 0.9914449, 0.13052595, 0.013088363, -0.13051476, 0.99136, -0.058840163, 0.8740257, 2.7615926)
-
-[node name="Sync" type="Node" parent="." unique_id=424463052]
+[node name="Sync" type="Node" parent="." unique_id=974343258]
 script = ExtResource("3_0cjno")
 control_mode = 2
 onnx_model_path = "cp1.onnx"
 metadata/_custom_type_script = "uid://c4c20urrvqtca"
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=675381074]
+transform = Transform3D(0.9999619, 0.0015903796, -0.008580934, 0, 0.98325497, 0.18223526, 0.008727069, -0.18222831, 0.98321754, -0.011756847, 1.2036107, 2.9975924)
