@@ -1,8 +1,7 @@
 [gd_scene format=3 uid="uid://b0kd7n253pumj"]
 
-[ext_resource type="Script" uid="uid://dpqnwn4k8b6tb" path="res://Script/cart_pole.gd" id="1_cv1pv"]
+[ext_resource type="Script" uid="uid://dpqnwn4k8b6tb" path="res://Script/cart_pole1.gd" id="1_cv1pv"]
 [ext_resource type="Script" uid="uid://cecbgkaw2dj0u" path="res://Scene/ai_controller_3d.gd" id="2_87veb"]
-[ext_resource type="Script" uid="uid://c4c20urrvqtca" path="res://addons/godot_rl_agents/sync.gd" id="3_0cjno"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mq8aq"]
 size = Vector3(0.5, 0.5, 0.5)
@@ -59,7 +58,7 @@ material_override = SubResource("StandardMaterial3D_87veb")
 mesh = SubResource("BoxMesh_51fql")
 
 [node name="Pole" type="RigidBody3D" parent="Cart-Pole" unique_id=1102643688]
-transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0.9814348, 0)
+transform = Transform3D(-1.0000001, 0, 8.742278e-08, 0, 1.0000001, 0, -8.7422784e-08, 0, -1, 0, -0.95519596, 0)
 mass = 0.1
 can_sleep = false
 
@@ -87,12 +86,3 @@ mesh = SubResource("PlaneMesh_0cjno")
 [node name="AIController3D" type="Node3D" parent="." unique_id=1065969588]
 script = ExtResource("2_87veb")
 metadata/_custom_type_script = "uid://cmvl0yom2wj0c"
-
-[node name="Sync" type="Node" parent="." unique_id=974343258]
-script = ExtResource("3_0cjno")
-control_mode = 2
-onnx_model_path = "cp1.onnx"
-metadata/_custom_type_script = "uid://c4c20urrvqtca"
-
-[node name="Camera3D" type="Camera3D" parent="." unique_id=675381074]
-transform = Transform3D(0.9999619, 0.0015903796, -0.008580934, 0, 0.98325497, 0.18223526, 0.008727069, -0.18222831, 0.98321754, -0.011756847, 1.2036107, 2.9975924)
