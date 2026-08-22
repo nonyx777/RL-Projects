@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b0kd7n253pumj"]
 
-[ext_resource type="Script" uid="uid://dpqnwn4k8b6tb" path="res://Script/cart_pole1.gd" id="1_cv1pv"]
+[ext_resource type="Script" uid="uid://ciuevfmqo0tlb" path="res://Script/cart_pole2.gd" id="1_87veb"]
 [ext_resource type="Script" uid="uid://cecbgkaw2dj0u" path="res://Scene/ai_controller_3d.gd" id="2_87veb"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mq8aq"]
@@ -32,7 +32,7 @@ height = 3.985
 size = Vector2(0.5, 0.5)
 
 [node name="CartPole" type="Node3D" unique_id=1941876373]
-script = ExtResource("1_cv1pv")
+script = ExtResource("1_87veb")
 
 [node name="SliderJoint3D" type="SliderJoint3D" parent="." unique_id=1056223422]
 node_a = NodePath("../Cart-Pole/Cart")
@@ -46,7 +46,6 @@ node_b = NodePath("../Cart-Pole/Pole")
 [node name="Cart-Pole" type="Node3D" parent="." unique_id=548458065]
 
 [node name="Cart" type="RigidBody3D" parent="Cart-Pole" unique_id=1008853378]
-mass = 2.0
 can_sleep = false
 linear_velocity = Vector3(12, 0, 0)
 
@@ -59,7 +58,7 @@ mesh = SubResource("BoxMesh_51fql")
 
 [node name="Pole" type="RigidBody3D" parent="Cart-Pole" unique_id=1102643688]
 transform = Transform3D(-1.0000001, 0, 8.742278e-08, 0, 1.0000001, 0, -8.7422784e-08, 0, -1, 0, -0.95519596, 0)
-mass = 0.1
+mass = 0.5
 can_sleep = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cart-Pole/Pole" unique_id=1997617885]

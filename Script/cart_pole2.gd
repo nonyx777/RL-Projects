@@ -5,16 +5,16 @@ extends Node3D
 
 @onready var ai_controller: AIController3D = $AIController3D
 
-const MAX_CART_DIST: float = 2.5
+const MAX_CART_DIST: float = 1.9
 const MAX_NUM_STEPS: int = 800
-const CART_FORCE: float = 5.0
-const MAX_POLE_ANGULAR_VELOCITY: float = 14
+const CART_FORCE: float = 10.0
+const MAX_POLE_ANGULAR_VELOCITY: float = 200
 
 var POLE_DEFAULT_TRANSFORM: Transform3D
 const CART_DEFAULT_POSITION: Vector3 = Vector3.ZERO
 
 const SOLVED_REWARD: float = 0.85
-const SOLVED_EPISODES: int = 100
+const SOLVED_EPISODES: int = 5
 
 var episode_returns: Array[float] = []
 var current_episode_return: float = 0.0
@@ -94,7 +94,10 @@ func _physics_process(_delta: float) -> void:
 		0:
 			force = Vector3.LEFT * CART_FORCE
 		1:
+			force = force
+		2:
 			force = Vector3.RIGHT * CART_FORCE
+			
 	
 	cart.apply_central_force(force)
 	

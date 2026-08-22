@@ -4,7 +4,7 @@ extends AIController3D
 @onready var cart: RigidBody3D = $"../Cart-Pole/Cart"
 @onready var pole: RigidBody3D = $"../Cart-Pole/Pole"
 
-var slide: int = 0
+var slide: int = 1
 var pole_angle: float = 0
 var cart_pos_x: float = 0
 var pole_angular_velocity: float = 0
@@ -36,7 +36,7 @@ func get_reward() -> float:
 func get_action_space() -> Dictionary:
 	return {
 		"slide" : {
-			"size": 2,
+			"size": 3,
 			"action_type": "discrete"
 		},
 	}
